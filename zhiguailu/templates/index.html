@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>志怪录</title>
+	<meta name="description" content="Free Responsive Html5 Css3 Templates">
+	<meta name="author" content="">
+	
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+	<!-- Definity CSS -->
+	<link href="../static/css/topimages.css" rel="stylesheet" media="all" type="text/css">
+  	<link href="../static/css/zerogrid.css" rel="stylesheet" media="all" type="text/css">
+	<link href="../static/css/style.css" rel="stylesheet" media="all" type="text/css">
+	<link href="../static/css/menu.css" rel="stylesheet" media="all" type="text/css">
+	<!-- Lightbox -->
+	<link href="../static/css/lightbox.css" rel="stylesheet" media="all" type="text/css">
+	<!-- Video Background -->
+	<link href="../static/css/jquery.mb.ytplayer.min.css" rel="stylesheet" media="all" type="text/css">
+	<!-- Animate.css -->
+	<link href="../static/css/animate.css" rel="stylesheet" media="all" type="text/css">
+	
+	<!-- Custom Fonts -->
+	<link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- Owl Carousel Assets -->
+    <link href="../static/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <!-- <link href="../static/owl-carousel/owl.theme.css" rel="stylesheet"> -->
+	
+	<!-- JS -->
+	
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="../static/js/html5.js"></script>
+		<script src="../static/js/css3-mediaqueries.js"></script>
+	<![endif]-->
+	<style>
+		.selectcontainer {
+			width: 500px;
+			height: 50px;
+			margin: 100px auto;
+		}
+
+		.selectparent {
+			width: 100%;
+			height: 42px;
+			top: 4px;
+			position: relative;
+		}
+
+		#select2 {
+			width:100px;
+			height:30px;
+		}
+
+	</style>
+
+</head>
+<body id="page-top">
+<div class="wrap-body">
+
+	<!--////////////////////////////////////Header-->
+	<header>
+		<div class="wrap-header" >
+			<!---Top Menu--->
+			<div id="cssmenu" >
+				<ul>
+				   <li class="active"><a href="./"><span>志怪录</span></a></li>
+				   <li class="has-sub"><a href="./catalog"><span>妖怪图鉴</span></a>
+					  <ul>
+						 <li><a href="catalog_shj"><span><b>山海经</b></span></a></li>
+						 <li><a href="catalog_zgbgl"><span>百鬼录</span></a></li>
+						 <li><a href="catalog_ssj"><span>搜神记</span></a></li>
+						 <li><a href="catalog_lzzy"><span>聊斋志异</span></a></li>
+						 <li><a href="catalog_qt"><span>其他</span></a></li>
+					  </ul>
+				   </li>
+				   <li class="has-sub"><a href="#"><span>志怪分布图</span></a>
+                        <ul>
+                            <li><a href="./map2"><span><b>山海经</b></span></a></li>
+						    <li><a href="./map1"><span>其他</span></a></li>
+                        </ul>
+                    </li>
+				   <li><a href="addpage"><span>新怪物</span></a></li>
+				   <li class="last"><a href="contact"><span>关于</span></a></li>
+				</ul>
+
+			</div>
+			<div class="mainimage" id="mainimage">
+				<div class="banner-main" id="banner-main">
+					<a href="#">
+						<div class="banner-slide slide1"></div>
+					</a>
+					<a href="#">
+						<div class="banner-slide slide2"></div>
+					</a>
+					<a href="#">
+						<div class="banner-slide slide3"></div>
+					</a>
+				</div>
+				<div class="nav-main" id="nav-main">
+						<ul id = "nav-ul">
+							<li class="changeColor"></li>
+							<li></li>
+							<li></li>
+						</ul>
+				</div>
+				<div id="scroll-page-content">
+					<a href="#page-content" class="scroller">
+						<span class="scroller-text">scroll down</span>
+						<div class="scroller-button">
+							<i class="fa fa-angle-double-down"></i>
+						</div>
+					</a>
+				</div>
+
+			</div>
+
+			<!---Main Header--->
+			
+
+		</div>
+	</header>
+
+
+	<!--////////////////////////////////////Container-->
+	<section id="page-content" class="index-page">
+		<div class="wrap-container">
+
+			<!-----------------content-box-3-示例妖怪------------------->
+			<section class="content-box box-3 box-style-1">
+				<div class="zerogrid">
+					<div class="wrap-box"><!--Start Box-->
+						<div class="header wow fadeInUp" data-wow-delay=".1s" data-wow-duration="1s">
+							<h1><b>志怪录</b></h1>
+							<span class="intro">Monsters Record</span>
+							<div class="selectcontainer">
+								<form action="" class="selectparent" method="post" enctype="multipart/form-data">
+									<input id="select1" type="text" name="monster_name" value="西王母">
+									<input id="select2" type="submit" value="搜索">
+								</form>
+							</div>
+						</div>
+						<div class="content wow fadeIn" data-wow-delay=".1s" data-wow-duration="1s">
+							<div class="row">
+								<div class="lg-1-4 md-1-3 sm-1-2">
+									<div class="wrap-col">
+										<div class="product"> 
+											<div class="product-thumbnail"><a href="/monster_id=486"><img src="../static/image/p1.jpg"></a></div>
+											<div class="product-content">
+												<div class="row">
+													<h2 class="product-title"><a href="/monster_id=486">虫落</a></h2>
+													<div class="product-rating">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+													</div>
+												</div>
+												<div class="row">
+													<div class="categories">
+														<a rel="tag">夜晚头可与身体分离</a>
+													</div> 
+													<span class="price">
+														广西
+													</span> 
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="lg-1-4 md-1-3 sm-1-2">
+									<div class="wrap-col">
+										<div class="product"> 
+											<div class="product-thumbnail"><a href="/monster_id=524"><img src="../static/image/p2.jpg"></a></div>
+											<div class="product-content">
+												<div class="row">
+													<h2 class="product-title"><a href="/monster_id=524">飞廉</a></h2>
+													<div class="product-rating">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star-o"></i>
+													</div>
+												</div>
+												<div class="row">
+													<div class="categories">
+														<a rel="tag">鸟身鹿头或者鸟头鹿身</a>
+													</div> 
+													<span class="price">
+														陕西
+													</span> 
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="lg-1-4 md-1-3 sm-1-2">
+									<div class="wrap-col">
+										<div class="product"> 
+											<div class="product-thumbnail"><a href="/monster_id=527"><img src="../static/image/p3.jpg"></a></div>
+											<div class="product-content">
+												<div class="row">
+													<h2 class="product-title"><a href="/monster_id=527">东皇太一</a></h2>
+													<div class="product-rating">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+													</div>
+												</div>
+												<div class="row">
+													<div class="categories">
+														<a rel="tag">东天王，阳神，对应阴神西王母</a>
+													</div> 
+													<span class="price">东海</span> 
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="lg-1-4 md-1-3 sm-1-2">
+									<div class="wrap-col">
+										<div class="product"> 
+											<div class="product-thumbnail"><a href="/monster_id=539"><img src="../static/image/p4.jpg"></a></div>
+											<div class="product-content">
+												<div class="row">
+													<h2 class="product-title"><a href="/monster_id=539">采薇翁</a></h2>
+													<div class="product-rating">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star-o"></i>
+														<i class="fa fa-star-o"></i>
+														<i class="fa fa-star-o"></i>
+													</div>
+												</div>
+												<div class="row">
+														<div class="categories">
+															<a rel="tag">用肚子装兵器</a>
+														</div> 
+														<span class="price">山东</span> 
+													</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="lg-1-4 md-1-3 sm-1-2">
+									<div class="wrap-col">
+										<div class="product"> 
+											<div class="product-thumbnail"><a href="/monster_id=543"><img src="../static/image/p5.jpg"></a></div>
+											<div class="product-content">
+												<div class="row">
+													<h2 class="product-title"><a href="/monster_id=543">缢鬼</a></h2>
+													<div class="product-rating">
+														<i class="fa fa-star-o"></i>
+														<i class="fa fa-star-o"></i>
+														<i class="fa fa-star-o"></i>
+														<i class="fa fa-star-o"></i>
+														<i class="fa fa-star-o"></i>
+													</div>
+												</div>
+												<div class="row">
+													<div class="categories">
+														<a rel="tag">舌头长两寸多</a>
+													</div> 
+													<span class="price">
+														浙江
+													</span> 
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="lg-1-4 md-1-3 sm-1-2">
+									<div class="wrap-col">
+										<div class="product"> 
+											<div class="product-thumbnail"><a href="/monster_id=546"><img src="../static/image/p6.jpg"></a></div>
+											<div class="product-content">
+												<div class="row">
+													<h2 class="product-title"><a href="/monster_id=546">荍中怪</a></h2>
+													<div class="product-rating">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star-o"></i>
+														<i class="fa fa-star-o"></i>
+													</div>
+												</div>
+												<div class="row">
+													<div class="categories">
+														<a hrel="tag">赤发鬡须</a>
+													</div> 
+													<span class="price">
+														山东
+													</span> 
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="lg-1-4 md-1-3 sm-1-2">
+									<div class="wrap-col">
+										<div class="product"> 
+											<div class="product-thumbnail"><a href="/monster_id=565"><img src="../static/image/p7.jpg"></a></div>
+											<div class="product-content">
+												<div class="row">
+													<h2 class="product-title"><a href="/monster_id=565">大头鬼</a></h2>
+													<div class="product-rating">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star-o"></i>
+													</div>
+												</div>
+												<div class="row">
+													<div class="categories">
+														<a rel="tag">头大如数斗瓮</a>
+													</div> 
+													<span class="price">
+														辽宁
+													</span> 
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="lg-1-4 md-1-3 sm-1-2">
+									<div class="wrap-col">
+										<div class="product"> 
+											<div class="product-thumbnail"><a href="/monster_id=484"><img src="../static/image/p8.jpg"></a></div>
+											<div class="product-content">
+												<div class="row">
+													<h2 class="product-title"><a href="/monster_id=484">䍺</a></h2>
+													<div class="product-rating">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+													</div>
+												</div>
+												<div class="row">
+													<div class="categories">
+														<a rel="tag">无嘴、状似牛羊</a>
+													</div> 
+													<span class="price">
+														河南
+													</span> 
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<!-----------------content-box-4-经典文献-------------------->
+			<section class="content-box box-4">
+				<div class="zerogrid-fluid">
+					<div class="wrap-box">
+						<div class="header wow fadeInUp" data-wow-delay=".1s" data-wow-duration="1s">
+							<h2>经典文献</h2>
+							<span class="intro">Classic Ancient Books About Monsters</span>
+						</div>
+						<div class="content wow fadeIn" data-wow-delay=".1s" data-wow-duration="1s">
+							<div class="row">
+								<div class="lg-1-4 md-1-3 sm-1-2">
+									<div class="portfolio-box zoom-effect">
+										<img src="../static/image/12.jpg" class="img-responsive" alt="">
+										<div class="portfolio-box-caption">
+											<div class="portfolio-box-caption-content">
+												<div class="project-name">
+													山海经
+												</div>
+												<div class="project-category">
+													Category
+												</div>
+												<div class="project-button">
+													<a href="./catalog_shj" class="button button-skin">Read More</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="lg-1-4 md-1-3 sm-1-2">
+									<div class="portfolio-box zoom-effect">
+										<img src="../static/image/13.jpg" class="img-responsive" alt="">
+										<div class="portfolio-box-caption">
+											<div class="portfolio-box-caption-content">
+												<div class="project-name">
+													百鬼录
+												</div>
+												<div class="project-category">
+													Category
+												</div>
+												<div class="project-button">
+													<a href="./catalog_zgbgl" class="button button-skin">Read More</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="lg-1-4 md-1-3 sm-1-2">
+									<div class="portfolio-box zoom-effect">
+										<img src="../static/image/14.jpg" class="img-responsive" alt="">
+										<div class="portfolio-box-caption">
+						  					<div class="portfolio-box-caption-content">
+												<div class="project-name">
+													搜神记
+												</div>
+												<div class="project-category">
+													Category
+												</div>
+												<div class="project-button">
+													<a href="./catalog_ssj" class="button button-skin">Read More</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="lg-1-4 md-1-3 sm-1-2">
+									<div class="portfolio-box zoom-effect">
+										<img src="../static/image/15.jpg" class="img-responsive" alt="">
+										<div class="portfolio-box-caption">
+											<div class="portfolio-box-caption-content">
+												<div class="project-name">
+													聊斋志异
+												</div>
+												<div class="project-category">
+													Category
+												</div>
+												<div class="project-button">
+													<a href="./catalog_lzzy" class="button button-skin">Read More</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<!-----------------content-box-5-------------------->
+			<section class="content-box box-5">
+				<div class="zerogrid">
+					<div class="wrap-box"><!--Start Box-->
+						<div class="header wow fadeInUp" data-wow-delay=".1s" data-wow-duration="1s">
+							<h2>志怪分布图</h2>
+							<span class="intro">Monsters Location in ancient China</span>
+						</div>
+						<div class="content wow fadeInRight" data-wow-delay=".1s" data-wow-duration="1s">
+							<div class="row">
+								<div class="sm-1-3">
+									<div class="wrap-col">
+										<div class="box-entry">
+											<div class="box-entry-inner">
+												<img src="../static/image/1.jpg" class="img-responsive"/>
+												<div class="entry-details">
+													<div class="entry-des">
+														<span><a href="#">04th Nov 2019</a></span>
+														<h3><a href="#">山海经怪物分布</a></h3>
+														<p>万物皆有灵性</p>
+                                                        <p>事出有因有果</p>
+														<a class="button button-skin" href="./map2">Read More</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="sm-1-3">
+									<div class="wrap-col">
+										<div class="box-entry">
+											<div class="box-entry-inner">
+												<img src="../static/image/3.jpg" class="img-responsive"/>
+												<div class="entry-details">
+													<div class="entry-des">
+														<span><a href="#">04th Nov 2019</a></span>
+														<h3><a href="#">其他怪物分布</a></h3>
+														<p>章帝时有寿光侯者，能劾百鬼众魅，</p>
+                                                        <p>令自缚见形。</p>
+														<a class="button button-skin" href="./map1">Read More</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="sm-1-3">
+									<div class="wrap-col">
+										<div class="box-entry">
+											<div class="box-entry-inner">
+												<img src="../static/image/4.jpg" class="img-responsive"/>
+												<div class="entry-details">
+													<div class="entry-des">
+														<span><a href="#">04th Nov 2019</a></span>
+														<h3><a href="#">待收录</a></h3>
+														<p>木魅山鬼</p>
+                                                        <p>野鼠城狐</p>
+														<a class="button button-skin" href="#">Read More</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-----------------content-box-2-志怪101-------------------->
+            <section class="content-box box-5" style="height: 250px;">
+				<div class="zerogrid">
+					<div class="wrap-box"><!--Start Box-->
+						<div class="header wow fadeInUp" data-wow-delay=".1s" data-wow-duration="1s">
+							<h2>志怪壹零壹</h2>
+							<span class="intro">The most gorgeous Monsters</span>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="content-box box-2 box-style-2">
+				<div class="zerogrid">
+					<div class="wrap-box"><!--Start Box-->
+						<div class="content wow fadeInLeft" data-wow-delay=".1s" data-wow-duration="1s">
+							<div class="row">
+								<div class="sm-1-2 offset-sm-2-4" style="right:0%; text-align:right;">
+									<h2><span style="color:#da9802de; background:wheat;">志怪101</span></h2>
+									<br/>
+									<ol>
+										<li><a href="/monster_id=192"><span style="color:white; background:#da9802de;">西王母</span></a></li>
+										<li><a href="/monster_id=577"><span style="color:white; background:#da9802de;">钱流</span></a></li>
+										<li><a href="/monster_id=183"><span style="color:white; background:#da9802de;">雨师妾</span></a></li>
+										<li><a href="/monster_id=513"><span style="color:white; background:#da9802de;">黄祖</span></a></li>
+										<li><a href="/monster_id=538"><span style="color:white; background:#da9802de;">聂小倩</span></a></li>
+										<li><a href="/monster_id=004"><span style="color:white; background:#da9802de;">凤凰</span></a></li>
+										<li><a href="/monster_id=299"><span style="color:white; background:#da9802de;">长右</span></a></li>
+										<li><a href="/monster_id=005"><span style="color:white; background:#da9802de;">听訞</span></a></li>
+										<li><a href="/monster_id=224"><span style="color:white; background:#da9802de;">蚩尤</span></a></li>
+										<li><a href="/monster_id=559"><span style="color:white; background:#da9802de;">肉芝</span></a></li>
+										<li><a href="/monster_id=533"><span style="color:white; background:#da9802de;">白泽</span></a></li>
+									</ol>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="content-box box-6 box-style-3">
+				<div class="zerogrid-fluid">
+					<div class="wrap-box" style="background: white;padding-bottom: 30px;padding-top: 30px;"></div>
+				</div>
+			</section>
+
+			
+		</div>
+	</section>
+
+	<!--////////////////////////////////////Footer-->
+	<footer id="page-footer">
+		<div class="zerogrid wrap-footer">
+			<div class="row">
+				<div class="sm-1-4 col-footer-1">
+					<div class="wrap-col">
+						<h3 class="widget-title">关于我们</h3>
+						<p>小组成员</p>
+						<p>3170101799      何墨琪</p>
+                        <p>3170102473  章含挺</p>
+                        <p>3170102472  吕科瑶</p>
+                        <p>3170104579  张婧</p>
+                        <p>3170102466  周姿含</p>
+					</div>
+				</div>
+				<div class="sm-1-4 col-footer-2">
+					<div class="wrap-col">
+						<h3 class="widget-title">新文章</h3>
+						<ul>
+							<li><a href="#">搜神记传说——惊！！竟然...</a></li>
+							<li><a href="#">妖怪雨师妾竟有两副面孔</a></li>
+							<li><a href="#">揭秘无人不爱的妖怪钱流背后的秘密</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sm-1-4 col-footer-3">
+					<div class="wrap-col">
+						<h3 class="widget-title">关键词</h3>
+						<a href="#">人</a>
+						<a href="#">仙</a>
+						<a href="#">神</a>
+						<a href="#">妖</a>
+						<a href="#">鬼</a>
+						<a href="#">魔</a>
+						<a href="#">山海经</a>
+						<a href="#">百鬼录</a>
+						<a href="#">聊斋</a>
+						<a href="#">搜神记</a>
+					</div>
+				</div>
+				<div class="sm-1-4 col-footer-4">
+					<div class="wrap-col">
+						<h3 class="widget-title">图片</h3>
+						<div class="row">
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/1.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/2.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/3.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/4.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/5.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/6.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/7.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/8.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/1.jpg"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="zerogrid bottom-footer">
+			<div class="copyright">
+				Copyright @ - DAM GROUP6 志怪录
+			</div>
+		</div>
+	</footer>
+	<div id="page-top"><a href="#page-top" class="button button-toTop f-right"><i class="fa fa-angle-double-up"></i></a></div>
+	
+	<!-- ========== Scripts ========== -->
+	<script src="../static/js/jquery-3.1.1.min.js"></script>
+	<script src="../static/js/menu.js"></script>
+	<script src="../static/js/jquery.localScroll.min.js"></script>
+	<script src="../static/js/jquery.scrollTo.min.js"></script>
+	<script src="../static/js/SmoothScroll.js"></script>
+	<script src="../static/js/wow.min.js"></script>
+	<script src="../static/js/topimages.js"></script>
+
+
+	<!-- Owl Carousel JS -->
+	<script src="../static/owl-carousel/owl.carousel.js"></script>
+	
+	
+    
+	
+	<!-- Definity JS -->
+	<script src="../static/js/main.js"></script>
+	
+</div>
+</body></html>

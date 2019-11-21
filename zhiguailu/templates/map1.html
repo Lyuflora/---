@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>志怪录-地图</title>
+	<meta name="description" content="Free Responsive Html5 Css3 Templates">
+	<meta name="author" content="">
+	
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+	<!-- Definity CSS -->
+  	<link href="../static/css/zerogrid.css" rel="stylesheet" media="all" type="text/css">
+	<link href="../static/css/style.css" rel="stylesheet" media="all" type="text/css">
+	<link href="../static/css/menu.css" rel="stylesheet" media="all" type="text/css">
+	<!-- Lightbox -->
+	<link href="../static/css/lightbox.css" rel="stylesheet" media="all" type="text/css">
+	<!-- Video Background -->
+	<link href="../static/css/jquery.mb.ytplayer.min.css" rel="stylesheet" media="all" type="text/css">
+	<!-- Animate.css -->
+	<link href="../static/css/animate.css" rel="stylesheet" media="all" type="text/css">
+	
+	<!-- Custom Fonts -->
+	<link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- Owl Carousel Assets -->
+    <link href="../static/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <!-- <link href="../static/owl-carousel/owl.theme.css" rel="stylesheet"> -->
+	
+	<!-- JS -->
+	
+	
+
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="../static/js/html5.js"></script>
+		<script src="../static/js/css3-mediaqueries.js"></script>
+	<![endif]-->
+    
+</head>
+<body id="page-top" class="sub-page">
+<div class="wrap-body">
+
+	<!--////////////////////////////////////Header-->
+	<header>
+		<div class="wrap-header" >
+			
+			<!---Main Header--->
+			<div class="main-header" style="background: url(../static/image/hero.jpg) center center;background-size: 100%;">
+				<div class="bg-overlay">
+					<!---Hero Content--->
+					<div class="hero-content-wrapper">
+					  <div class="hero-content">
+						<h4 class="h-alt hero-subheading wow fadeIn" data-wow-duration="2s" data-wow-delay=".7s">Monsters in</h4>
+						<h1 class="hero-lead wow fadeInLeft" data-wow-duration="1.5s">Ancient China</h1>
+					  </div>
+					</div>
+				</div>
+			</div>
+			
+			<!---Top Menu--->
+			<div id="cssmenu" >
+				<ul>
+				   <li class="active"><a href="./"><span>志怪录</span></a></li>
+				   <li class="has-sub"><a href="./catalog"><span>妖怪图鉴</span></a>
+					  <ul>
+						 <li><a href="catalog_shj"><span><b>山海经</b></span></a></li>
+						 <li><a href="catalog_zgbgl"><span>百鬼录</span></a></li>
+						 <li><a href="catalog_ssj"><span>搜神记</span></a></li>
+						 <li><a href="catalog_lzzy"><span>聊斋志异</span></a></li>
+						 <li><a href="catalog_qt"><span>其他</span></a></li>
+					  </ul>
+				   </li>
+				   <li class="has-sub"><a href="#"><span>志怪分布图</span></a>
+                        <ul>
+                            <li><a href="./map2"><span><b>山海经</b></span></a></li>
+						    <li><a href="./map1"><span>其他</span></a></li>
+                        </ul>
+                    </li>
+				   <li><a href="addpage"><span>新怪物</span></a></li>
+				   <li class="last"><a href="contact"><span>关于</span></a></li>
+				</ul>
+
+			</div>
+			
+		</div>
+	</header>
+
+	<!--////////////////////////////////////Container-->
+	<section id="page-content" style="background:#fafafa">
+		<div class="wrap-container zerogrid">
+			<div class="crumbs">
+				<ul>
+					<li><a href="./">主页</a></li>
+					<li><a href="#">志怪分布图</a></li>
+				</ul>
+			</div>
+			<div id="about-us">
+				<article class="post-entry single-post">
+					<div class="wrap-post">
+						<div class="entry-header">
+							<h2 class="entry-title">志怪分布图</h2>
+							<div class="entry-meta">
+								<p>妖怪数量在各省市分布</p>
+								<a href="#"><i class="fa fa-calendar"></i>2019.11.2</a>
+							</div>
+						</div>
+						<div id="map-container" style="height: 72vh"></div>
+
+
+						<!-----------------content-box-3-示例妖怪------------------->
+						<div>              </div>
+						<section class="content-box box-3 box-style-1" style="background-color:rgba(250,250,250,0)">
+							{% for key in mjson.items() %}
+							<div class="zerogrid">
+								<div class="wrap-box"><!--Start Box-->
+									<div>
+										<h4 style="height:6vh" id="{{'position'+ key[1]['position_id']}}">{{key[1]['position_name']}}</h4>
+										<div class="content wow fadeIn" data-wow-delay=".1s" data-wow-duration="1s">
+											{% for i in range(0,key[1]['monster_number']) %}
+												<div class="lg-1-4 md-1-3 sm-1-2">
+													<div class="wrap-col">
+														<div class="product">
+															<div class="product-content" style="padding: 20px 0 30px;">
+																<div class="row">
+																	<h2 class="product-title"><a href="/monster_id={{ key[1]['monster_id'][i] }}">{{key[1]['monster_name'][i]}}</a></h2>
+																	<div class="categories">
+																		<a rel="tag">{{key[1]['position_name']}}</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											{% endfor %}
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</section>
+
+
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+	<!--////////////////////////////////////Footer-->
+	<footer id="page-footer">
+		<div class="zerogrid wrap-footer">
+			<div class="row">
+				<div class="sm-1-4 col-footer-1">
+					<div class="wrap-col">
+						<h3 class="widget-title">关于我们</h3>
+						<p>小组成员</p>
+						<p>3170101799      何墨琪</p>
+                        <p>3170102473  章含挺</p>
+                        <p>3170102472  吕科瑶</p>
+                        <p>3170104579  张婧</p>
+                        <p>3170102466  周姿含</p>
+					</div>
+				</div>
+				<div class="sm-1-4 col-footer-2">
+					<div class="wrap-col">
+						<h3 class="widget-title">新文章</h3>
+						<ul>
+							<li><a href="#">搜神记传说——惊！！竟然...</a></li>
+							<li><a href="#">妖怪雨师妾竟有两副面孔</a></li>
+							<li><a href="#">揭秘无人不爱的妖怪钱流背后的秘密</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sm-1-4 col-footer-3">
+					<div class="wrap-col">
+						<h3 class="widget-title">关键词</h3>
+						<a href="#">人</a>
+						<a href="#">仙</a>
+						<a href="#">神</a>
+						<a href="#">妖</a>
+						<a href="#">鬼</a>
+						<a href="#">魔</a>
+						<a href="#">山海经</a>
+						<a href="#">百鬼录</a>
+						<a href="#">聊斋</a>
+						<a href="#">搜神记</a>
+					</div>
+				</div>
+				<div class="sm-1-4 col-footer-4">
+					<div class="wrap-col">
+						<h3 class="widget-title">图片</h3>
+						<div class="row">
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/1.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/2.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/3.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/4.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/5.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/6.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/7.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/8.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/1.jpg"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="zerogrid bottom-footer">
+			<div class="copyright">
+				Copyright @ - DAM 志怪录  Template Reference - http://www.cssmoban.com
+			</div>
+		</div>
+	</footer>
+	
+	
+	<!-- ========== Scripts ========== -->
+	<script src="../static/js/jquery-3.1.1.min.js"></script>
+	<script src="../static/js/menu.js"></script>
+	<script src="../static/js/jquery.localScroll.min.js"></script>
+	<script src="../static/js/jquery.scrollTo.min.js"></script>
+	<script src="../static/js/SmoothScroll.js"></script>
+	<script src="../static/js/wow.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/../static/js/china.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/../static/js/world.js"></script>
+	<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=lLHnyLnE71miXOptTE7ZuX3iz780SRFK"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+	<script type="text/javascript">
+		var dom = document.getElementById("map-container");
+		var myChart = echarts.init(dom);
+		var app = {};
+		option = null;
+		var data = [
+			{name: '安徽', value: 4, url:'#position025'},
+			{name: '北京', value: 3, url:'#position002'},
+			{name: '东海', value: 4, url:'#position009'},
+			{name: '福建', value: 2, url:'#position018'},
+			{name: '甘肃', value: 1, url:'#position015'},
+			{name: '广东', value: 1, url:'#position016'},
+			{name: '广西', value: 5, url:'#position005'},
+			{name: '河北', value: 1, url:'#position020'},
+			{name: '河南', value: 6, url:'#position021'},
+			{name: '天津', value: 1, url:'#position011'},
+			{name: '山东', value: 21, url:'#position014'},
+			{name: '湖北', value: 2, url:'#position022'},
+			{name: '湖南', value: 10, url:'#position007'},
+			{name: '江苏', value: 7, url:'#position006'},
+			{name: '江西', value: 7, url:'#position024'},
+			{name: '辽宁', value: 3, url:'#position019'},
+			{name: '南海', value: 1, url:'#position001'},
+			{name: '宁夏', value: 1, url:'#position029'},
+			{name: '青海', value: 1, url:'#position010'},
+			{name: '山西', value: 7, url:'#position012'},
+			{name: '陕西', value: 6, url:'#position028'},
+			{name: '四川', value: 5, url:'#position013'},
+			{name: '浙江', value: 8, url:'#position027'},
+			{name: '新疆', value: 1, url:'#position017'},
+			{name: '云南', value: 1, url:'#position026'},
+			{name: '重庆', value: 2, url:'#position030'},
+		];
+		var geoCoordMap = {
+			'安徽':[117.27,31.86],
+			'北京':[116.46,39.92],
+			'东海':[124.207216,27.985295],
+			'甘肃':[103.73,36.03],
+			'广东':[113.23,23.16],
+			'福建':[119.58,26.93],
+			'广西':[110.28,25.29],
+			'河北':[116.7,39.53],
+			'河南':[114.0,34.9],
+			'天津':[117.33,39.07],
+			'山东':[117,36.65],
+			'湖北':[114.31,30.52],
+			'湖南':[113,28.21],
+			'江苏':[120.62,31.32],
+			'江西':[115.89,28.68],
+			'辽宁':[123.38,41.8],
+			'南海':[113.38,15.52],
+			'宁夏':[106,38],
+			'青海':[101.7,36.6],
+			'山西':[112.53,37.87],
+			'陕西':[108.95,34.27],
+			'四川':[104.06,30.67],
+			'重庆':[106.54,29.59],
+			'浙江':[120.19,30.26],
+			'新疆':[87.68,43.77],
+			'云南':[102.73,25.04]
+		};
+
+		var convertData = function (data) {
+			var res = [];
+			for (var i = 0; i < data.length; i++) {
+				var geoCoord = geoCoordMap[data[i].name];
+				if (geoCoord) {
+					res.push({
+						name: data[i].name,
+						value: geoCoord.concat(data[i].value),
+						url: data[i].url
+					});
+				}
+			}
+			return res;
+		};
+
+		option = {
+			title: {
+				text: '志怪分布图',
+				subtext: '妖怪数量各省市分布',
+				sublink: './index.html',
+				left: 'center'
+			},
+			tooltip : {
+				trigger: 'item',
+				formatter: function (param) {
+						// return (val[2]*5+80)/10;
+						return param.name + '  ' + param.value[2];
+				},
+			},
+			bmap: {
+				center: [104.114129, 33.550339],
+				zoom: 5,
+				roam: true,//允许缩放
+				mapStyle: {
+					styleJson: [{
+						'featureType': 'water',
+						'elementType': 'all',
+						'stylers': {
+							'color': '#d1d1d1'
+						}
+					}, {
+						'featureType': 'land',
+						'elementType': 'all',
+						'stylers': {
+							'color': '#f3f3f3'
+						}
+					}, {
+						'featureType': 'railway',
+						'elementType': 'all',
+						'stylers': {
+							'visibility': 'off'
+						}
+					}, {
+						'featureType': 'highway',
+						'elementType': 'all',
+						'stylers': {
+							'color': '#fdfdfd'
+						}
+					}, {
+						'featureType': 'highway',
+						'elementType': 'labels',
+						'stylers': {
+							'visibility': 'off'
+						}
+					}, {
+						'featureType': 'arterial',
+						'elementType': 'geometry',
+						'stylers': {
+							'color': '#fefefe'
+						}
+					}, {
+						'featureType': 'arterial',
+						'elementType': 'geometry.fill',
+						'stylers': {
+							'color': '#fefefe'
+						}
+					}, {
+						'featureType': 'poi',
+						'elementType': 'all',
+						'stylers': {
+							'visibility': 'off'
+						}
+					}, {
+						'featureType': 'green',
+						'elementType': 'all',
+						'stylers': {
+							'visibility': 'off'
+						}
+					}, {
+						'featureType': 'subway',
+						'elementType': 'all',
+						'stylers': {
+							'visibility': 'off'
+						}
+					}, {
+						'featureType': 'manmade',
+						'elementType': 'all',
+						'stylers': {
+							'color': '#d1d1d1'
+						}
+					}, {
+						'featureType': 'local',
+						'elementType': 'all',
+						'stylers': {
+							'color': '#d1d1d1'
+						}
+					}, {
+						'featureType': 'arterial',
+						'elementType': 'labels',
+						'stylers': {
+							'visibility': 'off'
+						}
+					}, {
+						'featureType': 'boundary',
+						'elementType': 'all',
+						'stylers': {
+							'color': '#fefefe'
+						}
+					}, {
+						'featureType': 'building',
+						'elementType': 'all',
+						'stylers': {
+							'color': '#d1d1d1'
+						}
+					}, {
+						'featureType': 'label',
+						'elementType': 'labels.text.fill',
+						'stylers': {
+							'color': '#999999'
+						}
+					}]
+				}
+			},
+			series : [
+				{
+					name: '妖怪数量',
+					type: 'scatter',
+					coordinateSystem: 'bmap',
+					data: convertData(data),
+					symbolSize: function (val) {
+						return (val[2]*5+80)/10;
+					},
+					label: {
+						normal: {
+							formatter: '{b}',
+							position: 'right',
+							show: false
+						},
+						emphasis: {
+							show: true
+						}
+					},
+					itemStyle: {
+						normal: {
+							color: 'purple'
+						}
+					}
+				},
+				{
+					name: 'Top 5 妖怪数量',
+					type: 'effectScatter',
+					coordinateSystem: 'bmap',
+					data: convertData(data.sort(function (a, b) {
+						return b.value - a.value;
+					}).slice(0, 6)),
+					symbolSize: function (val) {
+						return (val[2]*5+80)/10;
+					},
+					showEffectOn: 'render',
+					rippleEffect: {
+						brushType: 'stroke'
+					},
+					hoverAnimation: true,
+					label: {
+						normal: {
+							formatter: '{b}',
+							position: 'right',
+							show: true
+						}
+					},
+					itemStyle: {
+						normal: {
+							color: 'purple',
+							shadowBlur: 10,
+							shadowColor: '#333'
+						}
+					},
+					zlevel: 1
+				}
+			]
+		};;
+		if (option && typeof option === "object") {
+			myChart.setOption(option, true);
+			myChart.on("click",function(e){
+				console.log(e);
+				//window.open(e.data.url);
+				location.href=e.data.url;
+			});
+		}
+   </script>
+	
+	
+	<!-- Definity JS -->
+	<script src="../static/js/main.js"></script>
+	
+</div>
+</body></html>

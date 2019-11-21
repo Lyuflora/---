@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>志怪录</title>
+	<meta name="description" content="Free Responsive Html5 Css3 Templates">
+	<meta name="author" content="">
+	
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+	<!-- Definity CSS -->
+  	<link href="../static/css/zerogrid.css" rel="stylesheet" media="all" type="text/css">
+	<link href="../static/css/style.css" rel="stylesheet" media="all" type="text/css">
+	<link href="../static/css/menu.css" rel="stylesheet" media="all" type="text/css">
+	<!-- Lightbox -->
+	<link href="../static/css/lightbox.css" rel="stylesheet" media="all" type="text/css">
+	<!-- Video Background -->
+	<link href="../static/css/jquery.mb.ytplayer.min.css" rel="stylesheet" media="all" type="text/css">
+	<!-- Animate.css -->
+	<link href="../static/css/animate.css" rel="stylesheet" media="all" type="text/css">
+	
+	<!-- Custom Fonts -->
+	<link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- Owl Carousel Assets -->
+    <link href="../static/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <!-- <link href="owl-carousel/owl.theme.css" rel="stylesheet"> -->
+	
+	<!-- JS -->
+	
+	
+
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
+    
+</head>
+<body id="page-top" class="sub-page">
+<div class="wrap-body">
+
+	<!--////////////////////////////////////Header-->
+	<header>
+		<div class="wrap-header" >
+			
+			<!---Main Header--->
+			<div class="main-header" style="background: url(../static/image/hero.jpg) center center;background-size: 100%;">
+				<div class="bg-overlay">
+					<!---Hero Content--->
+					<div class="hero-content-wrapper">
+					  <div class="hero-content">
+						<h4 class="h-alt hero-subheading wow fadeIn" data-wow-duration="2s" data-wow-delay=".7s">Monsters in </h4>
+						<h1 class="hero-lead wow fadeInLeft" data-wow-duration="1.5s">Ancient China</h1>
+					  </div>
+					</div>
+				</div>
+			</div>
+			
+			<!---Top Menu--->
+			<div id="cssmenu" >
+				<ul>
+				   <li class="active"><a href="./"><span>志怪录</span></a></li>
+				   <li class="has-sub"><a href="./catalog"><span>妖怪图鉴</span></a>
+					  <ul>
+						 <li><a href="catalog_shj"><span><b>山海经</b></span></a></li>
+						 <li><a href="catalog_zgbgl"><span>百鬼录</span></a></li>
+						 <li><a href="catalog_ssj"><span>搜神记</span></a></li>
+						 <li><a href="catalog_lzzy"><span>聊斋志异</span></a></li>
+						 <li><a href="catalog_qt"><span>其他</span></a></li>
+					  </ul>
+				   </li>
+				   <li class="has-sub"><a href="#"><span>志怪分布图</span></a>
+                        <ul>
+                            <li><a href="./map2"><span><b>山海经</b></span></a></li>
+						    <li><a href="./map1"><span>其他</span></a></li>
+                        </ul>
+                    </li>
+				   <li><a href="addpage"><span>新怪物</span></a></li>
+				   <li class="last"><a href="contact"><span>关于</span></a></li>
+				</ul>
+
+			</div>
+			
+		</div>
+	</header>
+
+	<!--////////////////////////////////////Container-->
+	<section id="page-content">
+		<div class="wrap-container zerogrid">
+			<div class="crumbs">
+				<ul>
+					<li><a href="/">主页</a></li>
+                    <li><a href="#"> {{ mjson['怪物名称'] }} </a></li>
+				</ul>
+			</div>
+			<div id="about-us">
+				<article class="post-entry single-post">
+					<div class="wrap-post">
+						<div class="entry-header">
+							<h1 class="entry-title"> {{ mjson['怪物名称'] }} </h1>
+							<div class="entry-meta">
+								<a href="#"><i class="fa fa-calendar"></i>2019.11.03</a>
+							</div>
+						</div>
+
+						<div class="post-thumbnail-wrap">
+                            {% for i in range(0,mjson['图片数量']) %}
+                                <img style="max-width: 60%;"  src={{ mjson['imgsrc'][i] }} />
+                            {% endfor %}
+						</div>
+
+						<div class="entry-content">
+							<div class="excerpt">
+                                {% if mjson['白话故事']=="" %}
+                                    <p></p>
+                                {% else %}
+                                    <p> {{ mjson['白话故事'] }} </p>
+                                {% endif %}
+							    <blockquote><p> {{ mjson['古文引用'] }} </p></blockquote>
+							    <br>
+                                <h2>别名</h2>
+							        {% if mjson['别名']=="" %}
+                                        <p>无</p>
+                                    {% else %}
+							            <p> {{ mjson['别名'] }} </p>
+                                    {% endif %}
+                                <br>
+                                <h2>活动地点</h2>
+                                    {% if mjson['活动地点']=="" %}
+                                        <p>无</p>
+                                    {% else %}
+							            <p> {{ mjson['活动地点'] }} </p>
+                                    {% endif %}
+                                <br>
+							    <h2>外貌</h2>
+							        {% if mjson['外貌']=="" %}
+                                        <p>无</p>
+                                    {% else %}
+							            <p> {{ mjson['外貌'] }} </p>
+                                    {% endif %}
+                                <br>
+							    <h2>技能</h2>
+                                    {% if mjson['技能']=="" %}
+                                        <p>无</p>
+                                    {% else %}
+							            <p> {{ mjson['技能'] }} </p>
+                                    {% endif %}
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+				</article>
+                <div class="zerogrid" id="comment_show">
+					<div class="comments-are">
+						<div id="comment">
+							<h3>Comments</h3>
+							{% for i in range(comments['num']) %}
+							<p style="margin-left: 35px;margin-right: 35px;border-bottom: 0.3px solid #dcdcdc;padding-bottom: 20px;margin-top: 10px;margin-bottom: 10px;padding-top: 20px;">
+                                <strong>{{i+1}}楼   </strong> {{ comments['context'][i] }}
+                            </p>
+							{% endfor %}
+<!--                            <p style="margin-left: 35px;margin-right: 35px;border-bottom: 0.3px solid #dcdcdc;padding-bottom: 20px;margin-top: 10px;margin-bottom: 10px;padding-top: 20px;">-->
+<!--                                <strong>2楼   </strong>我觉得楼上说的对-->
+<!--                            </p>-->
+						</div>
+					</div>
+				</div>
+                <div class="zerogrid" id="comment_submit">
+					<div class="comments-are">
+						<div id="comment">
+							<h3>Leave a Comment</h3>
+							<span>Your comments will be published in website. Required fields are marked </span>
+							<form name="form1" id="comment_form" method="post" action="">
+								<label>
+								<textarea name="message" id="message"></textarea>
+								</label>
+								<center><input class="button button-skin " type="submit" name="SubmitComment" value="Submit"></center>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+	</section>
+
+	<!--////////////////////////////////////Footer-->
+	<footer id="page-footer">
+		<div class="zerogrid wrap-footer">
+			<div class="row">
+				<div class="sm-1-4 col-footer-1">
+					<div class="wrap-col">
+						<h3 class="widget-title">关于我们</h3>
+						<p>小组成员</p>
+						<p>3170101799      何墨琪</p>
+                        <p>3170102473  章含挺</p>
+                        <p>3170102472  吕科瑶</p>
+                        <p>3170104579  张婧</p>
+                        <p>3170102466  周姿含</p>
+					</div>
+				</div>
+				<div class="sm-1-4 col-footer-2">
+					<div class="wrap-col">
+						<h3 class="widget-title">新文章</h3>
+						<ul>
+							<li><a href="#">搜神记传说——惊！！竟然...</a></li>
+							<li><a href="#">妖怪雨师妾竟有两副面孔</a></li>
+							<li><a href="#">揭秘无人不爱的妖怪钱流背后的秘密</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sm-1-4 col-footer-3">
+					<div class="wrap-col">
+						<h3 class="widget-title">关键词</h3>
+						<a href="#">人</a>
+						<a href="#">仙</a>
+						<a href="#">神</a>
+						<a href="#">妖</a>
+						<a href="#">鬼</a>
+						<a href="#">魔</a>
+						<a href="#">山海经</a>
+						<a href="#">百鬼录</a>
+						<a href="#">聊斋</a>
+						<a href="#">搜神记</a>
+					</div>
+				</div>
+				<div class="sm-1-4 col-footer-4">
+					<div class="wrap-col">
+						<h3 class="widget-title">图片</h3>
+						<div class="row">
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/1.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/2.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/3.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/4.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/5.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/6.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/7.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/8.jpg"></a>
+								</div>
+							</div>
+							<div class="sm-1-3 xs-1-2">
+								<div class="wrap-col">
+									<a href="#"><img src="../static/image/1.jpg"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="zerogrid bottom-footer">
+			<div class="copyright">
+				Copyright @ - DAM 志怪录  Template Reference - http://www.cssmoban.com
+			</div>
+		</div>
+	</footer>
+	
+	
+	<!-- ========== Scripts ========== -->
+	<script src="../static/js/jquery-3.1.1.min.js"></script>
+	<script src="../static/js/menu.js"></script>
+	<script src="../static/js/jquery.localScroll.min.js"></script>
+	<script src="../static/js/jquery.scrollTo.min.js"></script>
+	<script src="../static/js/SmoothScroll.js"></script>
+	<script src="../static/js/wow.min.js"></script>
+	<!-- Definity JS -->
+	<script src="../static/js/main.js"></script>
+	
+</div>
+</body></html>
