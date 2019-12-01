@@ -348,8 +348,7 @@ monster_ip={{number}}.html界面是妖怪信息的具体呈现，显示了妖怪
 
 本系统数据库的E-R图如下：
 
-<img src="https://ftp.bmp.ovh/imgs/2019/11/a7ef5464c10a2a86.png" width = "1000" div align=center />
-
+![](https://ftp.bmp.ovh/imgs/2019/11/a7ef5464c10a2a86.png)
 #### 数据表的实现
 
 妖怪记录的数据表如下（截取部分列）：
