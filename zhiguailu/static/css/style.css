@@ -139,7 +139,8 @@ header .main-header{position: relative;height: 88vh;width: 100%;background: url(
 .content-box .header .wrapper{padding: 5px; display: inline-block;}
 .content-box .header .intro {display: block;font-weight: 300;color: #999;margin-top: 25px;letter-spacing: 2.5px;}
 
-.content-box.box-style-1{background: #f7f7f7;}
+.content-box.box-style-1{background: url(../images/background.jpg) no-repeat;background-size: 100% 100%;}
+.content-box.box-style-5{background: url(../images/background.jpg) no-repeat;background-size: 100% 100%;}
 .content-box.box-style-2{background: url(../image/bg-2.jpg) no-repeat center center;background-size: cover;height:65vh;position: relative;}
 .content-box.box-style-2:before{position: absolute;content: ""; height: 100%; width: 100%;top: 0;left: 0;right: 0;bottom: 0;visibility: initial;}
 .content-box.box-style-3{background: url(../image/bg-3.jpg) fixed no-repeat center center;position: relative;}

@@ -90,11 +90,6 @@ def single(id):
     comments = db.showCommentY(id)
     return render_template('single.html', mjson=info, comments = comments)
 
-@app.route('/api/monster/<monster_id>')
-def monster_json_byID(monster_id):
-    with open("./static/json/"+str(monster_id)+".json", 'r') as f:
-        temp = json.loads(f.read())
-        return temp
 
 @app.route('/contact')
 def contact():
@@ -105,6 +100,7 @@ def addnew():
     if request.method == 'POST':
         d = dict()
         d['id'] = db.getMonsterNum() + 1
+        print(d['id'], type(d['id']))
         d['别名'] = request.form.get('another_name')
         d['古文引用'] = request.form.get('guwen')
         d['怪物名称'] = request.form.get('monster_name')
@@ -116,9 +112,30 @@ def addnew():
         if img:
             d['图片数量'] = 1
             os.mkdir('./static/image/'+str(d['id']))
-            img.save('./static/image/'+str(d['id'])+'/1.jpg')
+            img.save('./static/image/'+str(d['id'])+'/1.png')
             d['imgsrc'] = './static/image/'+str(d['id'])+'/'
         db.addNewMonster(d)
+
+
+        temp = readjson.openjson('new_qt.json')
+        qt_json = temp['其他']
+        print(type(qt_json['id'][0]))
+        qt_json['id'].append(str(d['id']))
+        qt_json['怪物名称'].append(d['怪物名称'])
+        qt_json['别名'].append(d['别名'])
+        qt_json['活动地点'].append(d['活动地点'])
+        qt_json['白话故事'].append(d['白话故事'])
+        qt_json['古文引用'].append(d['古文引用'])
+        qt_json['技能'].append(d['技能'])
+        qt_json['外貌'].append(d['外貌'])
+        qt_json['图片数量'].append(d['图片数量'])
+        qt_json['imgsrc'][str(d['id'])] = []
+        qt_json['imgsrc'][str(d['id'])].append('./static/image/' + str(d['id']) + '/1.png')
+        temp['其他'] = qt_json
+        with open('./static/json/new_qt.json', 'w') as file:
+            json.dump(temp, file)
+        # file.close()
+
         return redirect('/monster_id='+str(d['id']).zfill(3))
 
     return render_template('addpage.html')
